@@ -1,0 +1,3 @@
+export const logo_Image="https://static.vecteezy.com/system/resources/previews/023/986/704/non_2x/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png";
+export const Banner_Youtube="https://upload.wikimedia.org/wikipedia/commons/3/34/YouTube_logo_%282017%29.png"
+export const YOUTUBE_VIDEO_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=CA&maxResults=50&key=AIzaSyClpbwEkI2SOS0Hajpy38897uwWFpN5txk";
