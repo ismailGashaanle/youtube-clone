@@ -107,6 +107,7 @@ import Sidebar from './Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 import LiveChat from './LiveChat'
 import { addMessgaeLIve } from '../utils/MessageLiveSlice'
+import ShimmerUI from './ShimmerUI'
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams()
@@ -115,6 +116,7 @@ const WatchPage = () => {
   const [message, setMessage] = useState([])
   const showSibars = useSelector(store => store.sidebar.showSide)
   const dispatch = useDispatch()
+ 
 
   return (
     <div className="flex flex-col w-full min-h-screen">

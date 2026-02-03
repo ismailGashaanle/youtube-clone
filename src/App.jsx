@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import Login from './components/Login'
 import NotFound from './components/NotFound'
 import Body from './components/Body'
-import WatchPage from './components/WatchPage'
+// import WatchPage from './components/WatchPage'
 import { Provider } from 'react-redux'
 import AppStore from './utils/AppStore'
 import MainContent from './components/MainContent'
 import Youtube from './components/Youtube'
 import Shorts from './components/Shorts'
+import ShimmerUI from './components/ShimmerUI'
+const WatchPage=React.lazy(()=>import('./components/WatchPage'))
 
 const AppLayout=()=>{
   return(
@@ -64,7 +66,7 @@ const App = () => {
     },
     {
       path: "watch",
-      element: <WatchPage/>
+      element: <Suspense fallback={<ShimmerUI/>}><WatchPage/></Suspense>
     },
     {
       path:"/shorts",
