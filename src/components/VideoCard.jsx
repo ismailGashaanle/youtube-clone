@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { YOUTUBE_VIDEO_API } from '../utils/Constatnt'
+import { timeAgo } from './../utils/TimgeAgo';
+import { ViewsCalculate } from '../utils/ViewsHelper';
 
 const VideoCard = ({video}) => {
 
@@ -23,8 +25,10 @@ const VideoCard = ({video}) => {
 //         }
 //     }
 
-   const {categoryId,channelId,channelTitle,description,title,thumbnails}= video.snippet
-    const {likeCount,viewCount}=video.statistics;
+   const {categoryId,channelId,channelTitle,description,title,thumbnails,publishedAt }= video.snippet
+    // const {likeCount,viewCount}=video.statistics;
+    const { likeCount, viewCount } = video.statistics;
+
     // const {default.url}=thumbnails
     // const {default.url}=thumbnails
  console.log("",video)
@@ -52,6 +56,11 @@ const VideoCard = ({video}) => {
         <img className='w-full rounded-lg' src={thumbnails.medium.url} />
             <h1 className='text-black text-lg'>{title}</h1>
             <p className='text-sm'>{channelTitle}</p>
+            <div className='flex gap-2 items-center '>
+              <p className=' color-gray-400 capitalize my-2'>views {ViewsCalculate(viewCount)}</p>
+              <p className='color-gray-400 capitalize my-2'>{timeAgo(publishedAt)}</p>
+            {/* <p>Liked{likeCount}</p> */}
+            </div>
        </div>
       
     </div>
