@@ -6,7 +6,7 @@ import { ViewsCalculate } from '../utils/ViewsHelper';
 const VideoCard = ({video}) => {
 
 //     const [data,setData]=useState([])
-//    console.log(data)
+ 
 
 //     useEffect(()=>{
 // GetVideos();
@@ -28,10 +28,10 @@ const VideoCard = ({video}) => {
    const {categoryId,channelId,channelTitle,description,title,thumbnails,publishedAt }= video.snippet
     // const {likeCount,viewCount}=video.statistics;
     const { likeCount, viewCount } = video.statistics;
-
+const channelLogo = thumbnails.default.url;
     // const {default.url}=thumbnails
     // const {default.url}=thumbnails
-//  console.log("",video)
+ 
 
   return (
     <div className='flex flex-wrap gap-2 items-center justify-center' >
@@ -54,13 +54,29 @@ const VideoCard = ({video}) => {
 
        <div  className='w-[300px] h-[360px]  shadow-2xl rounded-2xl texx-black border-gray-100 py-3 px-1  cursor-pointer items-center gap-2'>
         <img className='w-full rounded-lg' src={thumbnails.medium.url} />
-            <h1 className='text-black text-lg'>{title}</h1>
+            
+           <div className='flex gap-2 py-2 px-1  '>
+             <div>
+                <img
+            title={channelTitle}
+            src={channelLogo}
+            className='w-12 h-10 rounded-[100%]'
+            />
+            
+            </div>
+            
+        
+         <div className='flex gap-1 flex-col '>
+               <h1 className='text-black text-lg w-full'>{title}</h1>
             <p className='text-sm'>{channelTitle}</p>
-            <div className='flex gap-2 items-center '>
-              <p className=' color-gray-400 capitalize my-2'>views {ViewsCalculate(viewCount)}</p>
-              <p className='color-gray-400 capitalize my-2'>{timeAgo(publishedAt)}</p>
+             <div className='flex gap-1 items-center '>
+              <p className=' color-gray-400 capitalize '>views {ViewsCalculate(viewCount)}</p>
+              <p className='color-gray-400 capitalize '>{timeAgo(publishedAt)}</p>
             {/* <p>Liked{likeCount}</p> */}
             </div>
+         </div>
+           </div>
+           
        </div>
       
     </div>
