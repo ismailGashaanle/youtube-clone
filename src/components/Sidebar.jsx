@@ -69,8 +69,8 @@ const [watchLaterOpen, setWatchLaterOpen] = useState(false)
       {/* Watch Later Sub Menu */}
         {watchLaterOpen && (
           <div className="ml-10 flex flex-col gap-2 text-sm text-gray-700">
-            <Link to="">Saved Videos</Link>
-            <Link to="">Playlists</Link>
+            <span className='cursor-pointer'>Saved Videos</span>
+            <span className='cursor-pointer'>Playlists</span>
           </div>
         )}
    
