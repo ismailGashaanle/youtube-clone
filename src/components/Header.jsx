@@ -41,7 +41,7 @@ signOut(auth).then(() => {
   return (
     <div className='grid grid-cols-12 sticky  py-1 z-50 top-0 px-4 justify-between items-center '>
       <div className='col-span-2 flex gap-2 items-center '>
-      <BsList onClick={ShowSiderCHange} className='text-2xl cursor-pointer'/>
+      <BsList onClick={ShowSiderCHange} className='text-3xl cursor-pointer'/>
     <Link to="/youtube">    <img   src={Banner_Youtube} className='w-[100px] cursor-pointer'/></Link>
       </div>
 
