@@ -31,7 +31,7 @@ const VideoCard = ({video}) => {
 
     // const {default.url}=thumbnails
     // const {default.url}=thumbnails
- console.log("",video)
+//  console.log("",video)
 
   return (
     <div className='flex flex-wrap gap-2 items-center justify-center' >

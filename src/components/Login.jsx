@@ -26,7 +26,7 @@ const Login = () => {
 
     const handleLoggin=()=>{
        const message=checkValidate(email.current.value,password.current.value);
-       console.log(message)
+  
        seterrorMessage(message)
        if(message) return;
 
