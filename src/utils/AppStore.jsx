@@ -4,13 +4,15 @@ import { configureStore } from "@reduxjs/toolkit";
  import SidebarReducer from './SidebarSlice'
  import VideoReducer from './VideoSlice'
  import MessageReducer from './MessageLiveSlice'
+ 
 const AppStore=configureStore({
 
     reducer:{
         user:userReducer,
         sidebar:SidebarReducer,
         videos:VideoReducer,
-        MessageLive:MessageReducer
+        MessageLive:MessageReducer,
+        
     }
 })
 

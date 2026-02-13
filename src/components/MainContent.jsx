@@ -10,7 +10,7 @@ import useMainContent from '../hooks/useMainContent';
 const MainContent = () => {
   
   const  videoData=useSelector(store=>store?.videos.videos)
-  // console.log("videoData",videoData)
+  
     const dispatch=useDispatch();
 
  
@@ -36,3 +36,42 @@ const MainContent = () => {
 };
 
 export default MainContent;
+
+
+// import React from 'react';
+// import VideoCard from './VideoCard';
+// import { Link } from 'react-router-dom';
+// import ButtonList from './ButtonList';
+// import { useSelector } from 'react-redux';
+// import useMainContent from '../hooks/useMainContent';
+
+// const MainContent = () => {
+//   const videoData = useSelector(store => store?.videos?.videos) || [];
+
+//   useMainContent();
+
+//   return (
+//     <div className="w-full px-4 py-4">
+//       <ButtonList />
+
+//       <div className="
+//         grid 
+//         gap-6 
+//         mt-4
+//         grid-cols-1 
+//         sm:grid-cols-2 
+//         md:grid-cols-3 
+//         lg:grid-cols-4 
+//         xl:grid-cols-4
+//       ">
+//         {videoData.map((video) => (
+//           <Link key={video.id} to={`/watch?v=${video.id}`}>
+//             <VideoCard video={video} />
+//           </Link>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default MainContent;
